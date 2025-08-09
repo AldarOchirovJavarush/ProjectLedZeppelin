@@ -1,6 +1,6 @@
 package com.javarush.ochirov.controller;
 
-import com.javarush.ochirov.model.User;
+import com.javarush.ochirov.model.user.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

@@ -1,40 +1,106 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Sign In</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Вход в систему</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        .container { max-width: 400px; margin: 0 auto; }
-        .form-group { margin-bottom: 15px; }
-        .error { color: red; }
-        input { width: 100%; padding: 8px; box-sizing: border-box; }
-        button { background: #4CAF50; color: white; padding: 10px; border: none; width: 100%; }
+        .app-container {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-family: 'Arial', sans-serif;
+        }
+        .app-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .btn {
+            display: block;
+            padding: 12px;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            width: 100%;
+        }
+        .btn-primary {
+            background: #4285f4;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #3367d6;
+        }
+        .message {
+            padding: 12px;
+            margin: 20px 0;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .error {
+            background: #ffebee;
+            color: #c62828;
+        }
+        .text-center {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .link {
+            color: #4285f4;
+            text-decoration: none;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-<div class="container">
-    <h2>Login</h2>
+<div class="app-container">
+    <h1 class="app-title">Вход в систему</h1>
 
     <c:if test="${not empty error}">
-        <div class="error">${error}</div>
+        <div class="message error">${error}</div>
     </c:if>
 
     <form action="${pageContext.request.contextPath}/auth/signin" method="post">
         <div class="form-group">
-            <label>Username:</label>
-            <input type="text" name="username" required>
+            <label>Логин:</label>
+            <input type="text" name="username" class="form-control" required>
         </div>
 
         <div class="form-group">
-            <label>Password:</label>
-            <input type="password" name="password" required>
+            <label>Пароль:</label>
+            <input type="password" name="password" class="form-control" required>
         </div>
 
-        <button type="submit">Sign In</button>
+        <button type="submit" class="btn btn-primary">Войти</button>
     </form>
 
-    <p>Don't have an account? <a href="${pageContext.request.contextPath}/auth/signup">Sign Up</a></p>
+    <div class="text-center">
+        Нет аккаунта? <a href="${pageContext.request.contextPath}/auth/signup" class="link">Зарегистрироваться</a>
+    </div>
 </div>
 </body>
 </html>

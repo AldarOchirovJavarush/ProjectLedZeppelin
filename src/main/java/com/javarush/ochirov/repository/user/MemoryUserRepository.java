@@ -1,6 +1,6 @@
-package com.javarush.ochirov.repository;
+package com.javarush.ochirov.repository.user;
 
-import com.javarush.ochirov.model.User;
+import com.javarush.ochirov.model.user.User;
 
 import java.util.Map;
 import java.util.Optional;

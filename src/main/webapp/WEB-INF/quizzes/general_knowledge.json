@@ -1,0 +1,103 @@
+{
+  "title": "Тест на общие знания",
+  "firstQuestionId": "q1",
+  "questions": {
+    "q1": {
+      "text": "Какая планета самая большая в Солнечной системе?",
+      "answers": [
+        {
+          "text": "Юпитер",
+          "nextId": "q2"
+        },
+        {
+          "text": "Сатурн",
+          "nextId": "q2"
+        },
+        {
+          "text": "Земля",
+          "nextId": "q2"
+        },
+        {
+          "text": "Марс",
+          "nextId": "q2"
+        }
+      ]
+    },
+    "q2": {
+      "text": "Какой язык программирования создал James Gosling?",
+      "answers": [
+        {
+          "text": "Java",
+          "nextId": "q3"
+        },
+        {
+          "text": "Python",
+          "nextId": "q3"
+        },
+        {
+          "text": "C++",
+          "nextId": "q3"
+        }
+      ]
+    },
+    "q3": {
+      "text": "Сколько континентов на Земле?",
+      "answers": [
+        {
+          "text": "5",
+          "nextId": "q4"
+        },
+        {
+          "text": "6",
+          "nextId": "q4"
+        },
+        {
+          "text": "7",
+          "nextId": "q4"
+        },
+        {
+          "text": "8",
+          "nextId": "q4"
+        },
+        {
+          "text": "9",
+          "nextId": "q4"
+        }
+      ]
+    },
+    "q4": {
+      "text": "Какое животное является символом России?",
+      "answers": [
+        {
+          "text": "Медведь",
+          "nextId": "q5"
+        },
+        {
+          "text": "Орёл",
+          "nextId": "q5"
+        }
+      ]
+    },
+    "q5": {
+      "text": "Какой год считается годом основания Санкт-Петербурга?",
+      "answers": [
+        {
+          "text": "1703",
+          "nextId": "end"
+        },
+        {
+          "text": "1721",
+          "nextId": "end"
+        },
+        {
+          "text": "1682",
+          "nextId": "end"
+        },
+        {
+          "text": "1755",
+          "nextId": "end"
+        }
+      ]
+    }
+  }
+}

@@ -1,4 +1,4 @@
-package com.javarush.ochirov.model;
+package com.javarush.ochirov.model.user;
 
 import lombok.Data;
 

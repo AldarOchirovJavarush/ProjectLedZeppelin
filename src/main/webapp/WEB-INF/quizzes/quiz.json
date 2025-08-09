@@ -1,0 +1,41 @@
+{
+  "title": "Java Basics",
+  "firstQuestionId": "q1",
+  "questions": {
+    "q1": {
+      "text": "Что такое JVM?",
+      "answers": [
+        {
+          "text": "База данных", "nextId": "q2"
+        },
+        {
+          "text": "База данных", "nextId": "q2"
+        },
+        {
+          "text": "База данных", "nextId": "q2"
+        },
+        {
+          "text": "База данных", "nextId": "q2"
+        },
+        {
+          "text": "База данных", "nextId": "q2"
+        },
+        {
+          "text": "База данных", "nextId": "q2"
+        },
+        {
+          "text": "База данных", "nextId": "q2"
+        },
+        {
+          "text": "Виртуальная машина", "nextId": "q3", "correct": true
+        }
+      ]
+    },
+    "q2": {
+      "text": "Неверно! Попробуйте ещё раз",
+      "answers": [
+        {"text": "Назад", "nextId": "q1"}
+      ]
+    }
+  }
+}

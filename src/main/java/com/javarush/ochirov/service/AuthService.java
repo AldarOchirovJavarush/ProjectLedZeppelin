@@ -1,9 +1,9 @@
 package com.javarush.ochirov.service;
 
-import com.javarush.ochirov.model.Role;
-import com.javarush.ochirov.model.User;
-import com.javarush.ochirov.repository.MemoryUserRepository;
-import com.javarush.ochirov.repository.UserRepository;
+import com.javarush.ochirov.model.user.Role;
+import com.javarush.ochirov.model.user.User;
+import com.javarush.ochirov.repository.user.MemoryUserRepository;
+import com.javarush.ochirov.repository.user.UserRepository;
 
 import java.util.Optional;
 

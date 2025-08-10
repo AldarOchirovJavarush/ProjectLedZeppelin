@@ -46,7 +46,17 @@ public class QuizController extends HttpServlet {
             questionId = config.getFirstQuestionId();
         }
 
+        if ("end".equals(questionId)) {
+            req.getRequestDispatcher("/WEB-INF/view/quiz/complete.jsp").forward(req, resp);
+            return;
+        }
+
         var question = quizService.getQuestion(quizId, questionId);
+        if (question == null) {
+            resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Question not found");
+            return;
+        }
+
         req.setAttribute("quizId", quizId);
         req.setAttribute("question", question);
         req.getRequestDispatcher("/WEB-INF/view/quiz/play.jsp").forward(req, resp);

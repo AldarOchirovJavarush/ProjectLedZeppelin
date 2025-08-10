@@ -8,8 +8,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
 @WebServlet("/auth/*")
@@ -22,6 +20,7 @@ public class AuthController extends HttpServlet {
     private static final String PARAM_USERNAME = "username";
     private static final String PARAM_PASSWORD = "password";
     private static final String ATTR_USER = "user";
+    private static final String ATTR_ERROR = "error";
     private static final String REDIRECT_HOME = "/home";
     private static final String VIEW_SIGNIN = "/WEB-INF/view/auth/signin.jsp";
     private static final String VIEW_SIGNUP = "/WEB-INF/view/auth/signup.jsp";
@@ -79,33 +78,36 @@ public class AuthController extends HttpServlet {
     }
 
     private void handleSignIn(HttpServletRequest req, HttpServletResponse resp)
-            throws IOException {
+            throws IOException, ServletException {
         var credentials = getCredentials(req);
         var authResult = authService.login(credentials.username, credentials.password);
         var user = authResult.user();
         if (user.isPresent()) {
             req.getSession().setAttribute(ATTR_USER, user.get());
-            redirect(resp, req.getContextPath() + REDIRECT_HOME, "");
+            redirect(resp, req.getContextPath() + REDIRECT_HOME);
         } else {
-            redirectWithError(resp, PATH_SIGNIN, authResult.error());
+            req.setAttribute(ATTR_ERROR, "Неправильные логин или пароль");
+            req.getRequestDispatcher(VIEW_SIGNIN).forward(req, resp);
         }
     }
 
     private void handleSignUp(HttpServletRequest req, HttpServletResponse resp)
-            throws IOException {
+            throws IOException, ServletException {
         var credentials = getCredentials(req);
         var authResult = authService.register(credentials.username, credentials.password);
         if (authResult.user().isPresent()) {
-            redirect(resp, PATH_AUTH + PATH_SIGNIN, "?success=Registration successful. Please login.");
+            req.getSession().setAttribute(ATTR_USER, authResult.user().get());
+            redirect(resp, req.getContextPath() + REDIRECT_HOME);
         } else {
-            redirectWithError(resp, PATH_SIGNUP, authResult.error());
+            req.setAttribute(ATTR_ERROR, authResult.error());
+            req.getRequestDispatcher(VIEW_SIGNUP).forward(req, resp);
         }
     }
 
     private void handleSignOut(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
         req.getSession().invalidate();
-        redirect(resp, req.getContextPath() + PATH_AUTH + PATH_SIGNIN, "");
+        redirect(resp, req.getContextPath() + PATH_AUTH + PATH_SIGNIN);
     }
 
     private Credentials getCredentials(HttpServletRequest req) {
@@ -114,11 +116,7 @@ public class AuthController extends HttpServlet {
 
     private record Credentials(String username, String password) {}
 
-    private void redirect(HttpServletResponse resp, String path, String message) throws IOException {
-        resp.sendRedirect(resp.encodeRedirectURL(path + message));
-    }
-
-    private void redirectWithError(HttpServletResponse resp, String path, String error) throws IOException {
-        resp.sendRedirect(resp.encodeRedirectURL(path + "?error=" + URLEncoder.encode(error, StandardCharsets.UTF_8)));
+    private void redirect(HttpServletResponse resp, String path) throws IOException {
+        resp.sendRedirect(resp.encodeRedirectURL(path));
     }
 }

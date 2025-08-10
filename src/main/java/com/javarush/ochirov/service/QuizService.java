@@ -48,9 +48,4 @@ public class QuizService {
     public QuizConfig getQuizConfig(String quizId) {
         return quizzesCache.get(quizId);
     }
-
-    public void addQuiz(String quizId, QuizConfig config) throws IOException {
-        quizRepository.save(quizId, config);
-        quizzesCache.put(quizId, config);
-    }
 }

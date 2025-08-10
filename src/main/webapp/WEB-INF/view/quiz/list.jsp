@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -35,24 +36,11 @@
     .quiz-btn:hover {
       background-color: #3367d6;
     }
-    .upload-link {
-      display: block;
-      padding: 12px 20px;
-      background-color: #34a853;
-      color: white;
-      border-radius: 5px;
-      text-align: center;
-      text-decoration: none;
-      margin-top: 20px;
-    }
-    .upload-link:hover {
-      background-color: #2d9249;
-    }
   </style>
 </head>
 <body>
 <div class="quiz-container">
-  <h1 class="page-title">Choose a Quiz</h1>
+  <h1 class="page-title">Выберите квиз</h1>
 
   <div class="quiz-list">
     <c:forEach items="${quizzes}" var="quiz">
@@ -62,7 +50,6 @@
     </c:forEach>
   </div>
 
-  <a href="<c:url value='/quiz/upload'/>" class="upload-link">Upload New Quiz</a>
 </div>
 </body>
 </html>

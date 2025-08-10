@@ -27,12 +27,6 @@ public class QuizRepository implements FileRepository<QuizConfig> {
     }
 
     @Override
-    public void save(String quizId, QuizConfig config) throws IOException {
-        var file = new File(quizzesDir + quizId + ".json");
-        mapper.writeValue(file, config);
-    }
-
-    @Override
     public List<String> getAllIds() {
         return Arrays.stream(Objects.requireNonNull(new File(quizzesDir).list()))
                 .filter(name -> name.endsWith(".json"))

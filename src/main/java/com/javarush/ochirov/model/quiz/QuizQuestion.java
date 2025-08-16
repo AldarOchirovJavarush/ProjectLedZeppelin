@@ -8,5 +8,6 @@ import java.util.List;
 public class QuizQuestion {
     private String text;
     private List<QuizAnswer> answers;
+    private int score;
     private boolean isEnd;
 }

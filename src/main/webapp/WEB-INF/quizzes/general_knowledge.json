@@ -7,7 +7,8 @@
       "answers": [
         {
           "text": "Юпитер",
-          "nextId": "q2"
+          "nextId": "q2",
+          "correct": true
         },
         {
           "text": "Сатурн",
@@ -27,12 +28,13 @@
       "text": "Какой язык программирования создал James Gosling?",
       "answers": [
         {
-          "text": "Java",
+          "text": "Python",
           "nextId": "q3"
         },
         {
-          "text": "Python",
-          "nextId": "q3"
+          "text": "Java",
+          "nextId": "q3",
+          "correct": true
         },
         {
           "text": "C++",
@@ -48,16 +50,17 @@
           "nextId": "q4"
         },
         {
-          "text": "6",
-          "nextId": "q4"
-        },
-        {
           "text": "7",
           "nextId": "q4"
         },
         {
           "text": "8",
           "nextId": "q4"
+        },
+        {
+          "text": "6",
+          "nextId": "q4",
+          "correct": true
         },
         {
           "text": "9",
@@ -70,7 +73,8 @@
       "answers": [
         {
           "text": "Медведь",
-          "nextId": "q5"
+          "nextId": "q5",
+          "correct": true
         },
         {
           "text": "Орёл",
@@ -83,7 +87,8 @@
       "answers": [
         {
           "text": "1703",
-          "nextId": "end"
+          "nextId": "end",
+          "correct": true
         },
         {
           "text": "1721",

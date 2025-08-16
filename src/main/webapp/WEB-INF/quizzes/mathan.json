@@ -1,0 +1,288 @@
+{
+  "title": "Математический анализ",
+  "firstQuestionId": "seq1",
+  "questions": {
+    "seq1": {
+      "text": "Какая последовательность называется ограниченной?",
+      "score": 1,
+      "answers": [
+        {
+          "text": "Которая сходится",
+          "nextId": "series1",
+          "correct": false
+        },
+        {
+          "text": "Такая, что существует число M: |aₙ| ≤ M для всех n",
+          "nextId": "seq2",
+          "correct": true
+        },
+        {
+          "text": "Такая, что её элементы не превышают 100",
+          "nextId": "series1",
+          "correct": false
+        }
+      ]
+    },
+    "seq2": {
+      "text": "Что означает сходимость последовательности?",
+      "score": 1,
+      "answers": [
+        {
+          "text": "Что её элементы стремятся к нулю",
+          "nextId": "series1",
+          "correct": false
+        },
+        {
+          "text": "Что существует предел её частичных сумм",
+          "nextId": "series1",
+          "correct": false
+        },
+        {
+          "text": "Что существует число a, к которому стремятся её элементы",
+          "nextId": "seq3",
+          "correct": true
+        }
+      ]
+    },
+    "seq3": {
+      "text": "Какая последовательность называется монотонной?",
+      "score": 1,
+      "answers": [
+        {
+          "text": "Неубывающая или невозрастающая",
+          "nextId": "series1",
+          "correct": true
+        },
+        {
+          "text": "Только строго возрастающая",
+          "nextId": "series1",
+          "correct": false
+        },
+        {
+          "text": "Имеющая предел",
+          "nextId": "series1",
+          "correct": false
+        }
+      ]
+    },
+    "series1": {
+      "text": "Что называется числовым рядом?",
+      "score": 2,
+      "answers": [
+        {
+          "text": "Сумма всех элементов последовательности",
+          "nextId": "limits1",
+          "correct": false
+        },
+        {
+          "text": "Предел последовательности её частичных сумм",
+          "nextId": "series2",
+          "correct": true
+        },
+        {
+          "text": "Формальная сумма бесконечной последовательности чисел",
+          "nextId": "limits1",
+          "correct": false
+        }
+      ]
+    },
+    "series2": {
+      "text": "Необходимый и/или достаточный признак сходимости рядов (Sₙ -> 0)?",
+      "score": 2,
+      "answers": [
+        {
+          "text": "Необходимый",
+          "nextId": "series3",
+          "correct": true
+        },
+        {
+          "text": "Достаточный",
+          "nextId": "limits1",
+          "correct": false
+        },
+        {
+          "text": "Необходимый и достаточный",
+          "nextId": "limits1",
+          "correct": false
+        }
+      ]
+    },
+    "series3": {
+      "text": "Какой ряд называется абсолютно сходящимся?",
+      "score": 2,
+      "answers": [
+        {
+          "text": "Ряд с положительными членами",
+          "nextId": "limits1",
+          "correct": false
+        },
+        {
+          "text": "Ряд, частичные суммы которого ограничены",
+          "nextId": "limits1",
+          "correct": false
+        },
+        {
+          "text": "Ряд, у которого сходится ряд из модулей",
+          "nextId": "limits1",
+          "correct": true
+        }
+      ]
+    },
+    "limits1": {
+      "text": "Что такое предел функции в точке?",
+      "score": 3,
+      "answers": [
+        {
+          "text": "Значение функции в этой точке",
+          "nextId": "derivatives1",
+          "correct": false
+        },
+        {
+          "text": "Число, к которому стремится функция при приближении аргумента к точке",
+          "nextId": "limits2",
+          "correct": true
+        },
+        {
+          "text": "Минимальное значение функции в окрестности точки",
+          "nextId": "derivatives1",
+          "correct": false
+        }
+      ]
+    },
+    "limits2": {
+      "text": "Что означает непрерывность функции в точке?",
+      "score": 3,
+      "answers": [
+        {
+          "text": "Функция определена в этой точке",
+          "nextId": "derivatives1",
+          "correct": false
+        },
+        {
+          "text": "Предел функции равен значению функции в точке",
+          "nextId": "derivatives1",
+          "correct": true
+        },
+        {
+          "text": "Функция имеет производную в этой точке",
+          "nextId": "derivatives1",
+          "correct": false
+        }
+      ]
+    },
+    "derivatives1": {
+      "text": "Что такое производная функции?",
+      "score": 4,
+      "answers": [
+        {
+          "text": "Предел отношения приращения функции к приращению аргумента",
+          "nextId": "derivatives2",
+          "correct": true
+        },
+        {
+          "text": "Интеграл от функции",
+          "nextId": "integration1",
+          "correct": false
+        },
+        {
+          "text": "Касательная к графику функции",
+          "nextId": "integration1",
+          "correct": false
+        }
+      ]
+    },
+    "derivatives2": {
+      "text": "Как называется точка, где производная равна нулю?",
+      "score": 4,
+      "answers": [
+        {
+          "text": "Точка разрыва",
+          "nextId": "integration1",
+          "correct": false
+        },
+        {
+          "text": "Точка прикосновения",
+          "nextId": "integration1",
+          "correct": false
+        },
+        {
+          "text": "Критическая точка",
+          "nextId": "integration1",
+          "correct": true
+        },
+        {
+          "text": "Точка перегиба",
+          "nextId": "integration1",
+          "correct": false
+        }
+      ]
+    },
+    "integration1": {
+      "text": "Что такое первообразная?",
+      "score": 5,
+      "answers": [
+        {
+          "text": "Образ функции",
+          "nextId": "end",
+          "correct": false
+        },
+        {
+          "text": "Предел последовательности",
+          "nextId": "end",
+          "correct": false
+        },
+        {
+          "text": "Обратная функция",
+          "nextId": "end",
+          "correct": false
+        },
+        {
+          "text": "Вторая производная функции",
+          "nextId": "end",
+          "correct": false
+        },
+        {
+          "text": "Функция, производная которой равна данной",
+          "nextId": "integration2",
+          "correct": true
+        }
+      ]
+    },
+    "integration2": {
+      "text": "Как называется интеграл с бесконечный пределом интегрирования?",
+      "score": 5,
+      "answers": [
+        {
+          "text": "Поверхностный",
+          "nextId": "end",
+          "correct": false
+        },
+        {
+          "text": "Собственный",
+          "nextId": "end",
+          "correct": false
+        },
+        {
+          "text": "Несобственный",
+          "nextId": "end",
+          "correct": true
+        },
+        {
+          "text": "Контурный",
+          "nextId": "end",
+          "correct": false
+        },
+        {
+          "text": "Определенный",
+          "nextId": "end",
+          "correct": false
+        },
+        {
+          "text": "Кратный",
+          "nextId": "end",
+          "correct": false
+        }
+      ]
+    }
+  }
+}
